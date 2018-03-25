@@ -11,13 +11,13 @@ function spinWord() {
   el!.innerHTML = greeter.create();
 }
 
-const btn = document.getElementById('go');
-btn!.addEventListener('click', spinWord);
-
-
 const up = document.querySelector('.up');
-up!.addEventListener('click', ()=>{spinWord()});
+up!.addEventListener('click', () => {
+  spinWord();
+});
 const down = document.querySelector('.down');
-down!.addEventListener('click', ()=>{spinWord()});
+down!.addEventListener('click', () => {
+  spinWord();
+});
 
 spinWord();
