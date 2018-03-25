@@ -5,10 +5,19 @@ import { Worder } from './worder';
 
 const greeter: Worder = new Worder('bugler');
 
-const el = document.getElementById('greeting');
-if (el) {
-  el.innerHTML = greeter.create();
+const el = document.getElementById('bugler');
+
+function spinWord() {
+  el!.innerHTML = greeter.create();
 }
 
 const btn = document.getElementById('go');
-btn!.addEventListener('click', () => (el!.innerText = greeter.create()));
+btn!.addEventListener('click', spinWord);
+
+
+const up = document.querySelector('.up');
+up!.addEventListener('click', ()=>{spinWord()});
+const down = document.querySelector('.down');
+down!.addEventListener('click', ()=>{spinWord()});
+
+spinWord();
