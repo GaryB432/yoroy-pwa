@@ -2,7 +2,7 @@
 const path = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -38,16 +38,20 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
       },
     ],
   },
@@ -60,7 +64,7 @@ module.exports = {
 
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
-      chunkFilename: 'css/[id].[hash].css'
+      chunkFilename: 'css/[id].[hash].css',
     }),
 
     new CopyWebpackPlugin([{ from: 'public' }]),
@@ -89,10 +93,10 @@ module.exports = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
-          chunks: 'all'
-        }
-      }
-    }
+          chunks: 'all',
+        },
+      },
+    },
   },
 
   devtool: 'source-map',

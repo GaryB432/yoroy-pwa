@@ -31,21 +31,19 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  img {
-    height: 2rem;
-  }
   .down {
     transform: rotate(180deg);
   }
   .back,
   .forth {
+    fill: green;
     height: 2rem;
   }
   .back {
     transform: rotate(180deg);
   }
   .forth {
-    color: blue;
+    fill: blue;
   }
 }
 .flaticon {
