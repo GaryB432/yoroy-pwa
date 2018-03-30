@@ -4,7 +4,7 @@
   "description": "bugler",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "webpack-dev-server",
+    "start": "webpack-serve ./webpack.config.js",
     "format": "prettier --write \"src/{scripts,styles}/**/*\" --single-quote --trailing-comma es5",
     "prebuild": "npm run format",
     "heroku-postbuild": "webpack",
@@ -42,7 +42,7 @@
     "typescript": "^2.8.1",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-serve": "^0.3.0"
   },
   "engines": {
     "node": ">=6.0.0"
