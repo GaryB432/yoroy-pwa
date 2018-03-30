@@ -5,14 +5,18 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-dev-server",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.scss\" --single-quote --trailing-comma es5",
+    "format": "prettier --write \"src/{scripts,styles}/**/*\" --single-quote --trailing-comma es5",
     "prebuild": "npm run format",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "webpack",
     "build": "npm run clean && webpack",
     "test": "jest",
     "test-watch": "jest --watch"
   },
   "license": "ISC",
+  "dependencies": {
+    "finalhandler": "^1.1.1",
+    "serve-static": "^1.13.2"
+  },
   "devDependencies": {
     "@types/jest": "^20.0.5",
     "@types/node": "^8.0.0",
@@ -52,9 +56,5 @@
       "js"
     ],
     "testEnvironment": "node"
-  },
-  "dependencies": {
-    "finalhandler": "^1.1.1",
-    "serve-static": "^1.13.2"
   }
 }

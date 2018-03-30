@@ -6,6 +6,6 @@ describe('Worder', () => {
     greeter = new Worder('testing!');
   });
   it('should greet', () => {
-    expect(greeter.create().length).toBe(6);
+    expect(greeter.create().length).toBe(5);
   });
 });
