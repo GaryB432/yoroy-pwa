@@ -20,7 +20,7 @@ body {
   justify-content: space-between;
 }
 .a {
-  padding: 1rem 0;
+  padding: 2rem 0;
   font-size: 2rem;
   background: orange;
   text-align: center;
@@ -32,16 +32,20 @@ body {
   justify-content: space-around;
   align-items: center;
   img {
-    padding: 0.2rem;
-    height: 1.5rem;
-    // height: 2rem;
+    height: 2rem;
   }
   .down {
     transform: rotate(180deg);
   }
+  .back,
+  .forth {
+    height: 2rem;
+  }
   .back {
-    height: 1rem;
     transform: rotate(180deg);
+  }
+  .forth {
+    color: blue;
   }
 }
 .flaticon {

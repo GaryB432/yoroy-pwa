@@ -8,6 +8,10 @@ function spinWord() {
   el!.innerHTML = worder.create();
 }
 
+const bback = document.querySelector('.back')!;
+bback.addEventListener('click', () => {
+  spinWord();
+});
 const up = document.querySelector('.up')!;
 up.addEventListener('click', () => {
   spinWord();
