@@ -1,5 +1,3 @@
-import '../styles/base.scss';
-
 import { Greeter } from './greeter';
 import { Worder } from './worder';
 
