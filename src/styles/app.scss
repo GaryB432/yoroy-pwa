@@ -31,20 +31,27 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  .down {
-    transform: rotate(180deg);
-  }
-  .back,
-  .forth {
-    fill: green;
+  svg {
     height: 2rem;
   }
-  .back {
-    transform: rotate(180deg);
-  }
-  .forth {
-    fill: blue;
-  }
+  // .down {
+  //   transform: rotate(180deg);
+  // }
+  // .back,
+  // .forth {
+  //   path {
+  //     fill: pink;
+  //   }
+  //   svg {
+  //     height: 1rem;
+  //   }
+  // }
+  // .back {
+  //   transform: rotate(180deg);
+  // }
+  // .forth {
+  //   fill: blue;
+  // }
 }
 .flaticon {
   padding: 0.2rem;

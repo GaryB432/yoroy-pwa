@@ -1,9 +1,8 @@
+/* tslint:disable:no-var-requires */
 import { Worder } from './worder';
 
-// import { stuff } from '../public/images/thumbs-up.svg';
-
-const thumbsUp = require('../public/images/thumbs-up.svg');
-const chevron = require('../public/images/right-chevron.svg');
+const thumbsUp = require('../svg/thumbs-up.svg');
+const chevron = require('../svg/right-chevron.svg');
 
 const worder: Worder = new Worder('bugler');
 
@@ -20,13 +19,30 @@ bback.appendChild(backSvg);
 bback.addEventListener('click', () => {
   spinWord();
 });
-const up = document.querySelector('.up')!;
-up.addEventListener('click', () => {
+
+const bup = document.querySelector('.up')!;
+const upSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+upSvg.innerHTML = 'thumbsUp';
+bup.appendChild(upSvg);
+bup.addEventListener('click', () => {
   spinWord();
 });
-const down = document.querySelector('.down')!;
-down.addEventListener('click', () => {
+
+// const bdown = document.querySelector('.down')!;
+// const downSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+// downSvg.innerHTML = thumbsUp;
+// bdown.appendChild(downSvg);
+// bdown.addEventListener('click', () => {
+//   spinWord();
+// });
+
+const bforth = document.querySelector('.forth')!;
+const forthSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+forthSvg.innerHTML = chevron;
+bforth.appendChild(forthSvg);
+bforth.addEventListener('click', () => {
   spinWord();
 });
+
 
 spinWord();
