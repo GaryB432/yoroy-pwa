@@ -4,7 +4,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const { InjectManifest, GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -68,10 +68,17 @@ module.exports = {
       chunkFilename: 'css/[id].[hash].css',
     }),
 
-    new WorkboxPlugin.GenerateSW({
-      clientClaim: true,
-      skipWaiting: true
+    new InjectManifest({
+      swSrc: path.join('src', 'sw.js'),
+      swDest: 'service-worker.js',
     }),
+    
+    // new GenerateSW({
+      // skipWaiting: true,
+      // clientsClaim: true,
+    //   globPatterns: ['**/*.svg'],
+    //   // runtimeCaching: [{}]
+    // }),
 
     new CopyWebpackPlugin([{ from: 'public' }]),
   ],

@@ -9,7 +9,7 @@
     "prebuild": "npm run format",
     "heroku-postbuild": "npm run build && npm run build-sw",
     "build": "npm run clean && webpack --config ./webpack.config.js",
-    "build-sw": "webpack --config ./webpack.sw.config.js",
+    "build-sw0": "webpack --config ./webpack.sw.config.js",
     "test": "jest",
     "test-watch": "jest --watch"
   },
