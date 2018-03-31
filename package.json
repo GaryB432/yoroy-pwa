@@ -7,8 +7,9 @@
     "start": "webpack-serve ./webpack.config.js",
     "format": "prettier --write \"src/{scripts,styles}/**/*\" --single-quote --trailing-comma es5",
     "prebuild": "npm run format",
-    "heroku-postbuild": "webpack",
-    "build": "npm run clean && webpack",
+    "heroku-postbuild": "npm run build && npm run build-sw",
+    "build": "npm run clean && webpack --config ./webpack.config.js",
+    "build-sw": "webpack --config ./webpack.sw.config.js",
     "test": "jest",
     "test-watch": "jest --watch"
   },

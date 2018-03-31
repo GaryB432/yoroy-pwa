@@ -1,4 +1,4 @@
-/* tslint:disable:no-var-requires */
+/* tslint:disable:no-var-requires no-console */
 import { Worder } from './worder';
 
 const worder: Worder = new Worder();
@@ -45,8 +45,6 @@ function dismiss(score: number) {
 }
 
 const bback = document.querySelector('.back')! as HTMLElement;
-// const backSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-// bback.appendChild(backSvg);
 bback.addEventListener('click', () => {
   if (ndx > 0) {
     ndx--;
@@ -75,6 +73,24 @@ bforth.addEventListener('click', () => {
     setSelectedButton(bforth);
   }
 });
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(
+      registration => {
+        // Registration was successful
+        console.log(
+          'ServiceWorker registration successful with scope: ',
+          registration.scope
+        );
+      },
+      err => {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      }
+    );
+  });
+}
 
 getNewWord();
 showWord();
