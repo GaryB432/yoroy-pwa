@@ -1,14 +1,27 @@
 // tslint:disable:no-console
 
-const CACHE_NAME = 'my-site-cache-v1';
-const urlsToCache = ['/', '/images/right-chevron.svg', '/images/thumbs-up.svg'];
+const CACHE_NAME = 'bugler-cache-v1';
+const staticAssets = [
+  '/',
+  '/index.html',
+  '/images/right-chevron.svg',
+  '/images/thumbs-up.svg',
+];
+
+import 'tslib';
 
 interface WEventMap extends WindowEventMap {
   install: InstallEvent;
+  fetch: FetchEvent;
+}
+
+interface FetchEvent extends Event {
+  request: Request;
+  respondWith(fn: Promise<Response>): void;
 }
 
 interface InstallEvent extends Event {
-  waitUntil(fn: Promise<any>): Promise<any>;
+  waitUntil<T>(fn: Promise<T>): Promise<T>;
 }
 
 interface SWorker {
@@ -21,7 +34,18 @@ interface SWorker {
 
 const _self = self as SWorker;
 
+async function cacheFirst(req: Request): Promise<Response> {
+  const cachedResponse: Promise<Response> = await caches.match(req);
+  console.log(cachedResponse, 'hi');
+  return cachedResponse || fetch(req);
+}
+
 _self.addEventListener('install', async event => {
   const cache = await caches.open(CACHE_NAME);
-  cache.addAll(urlsToCache);
+  cache.addAll(staticAssets);
+});
+
+_self.addEventListener('fetch', event => {
+  const req = event.request;
+  event.respondWith(cacheFirst(req));
 });

@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "finalhandler": "^1.1.1",
-    "serve-static": "^1.13.2"
+    "serve-static": "^1.13.2",
+    "tslib": "^1.9.0"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
@@ -43,7 +44,8 @@
     "typescript": "^2.8.1",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",
-    "webpack-serve": "^0.3.0"
+    "webpack-serve": "^0.3.0",
+    "workbox-webpack-plugin": "^3.0.1"
   },
   "engines": {
     "node": ">=6.0.0"

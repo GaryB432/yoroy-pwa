@@ -4,6 +4,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -17,7 +18,7 @@ module.exports = {
     filename: 'scripts/[name].[hash].js',
   },
 
-  mode: 'none',
+  mode: 'production',
 
   module: {
     rules: [
@@ -65,6 +66,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
       chunkFilename: 'css/[id].[hash].css',
+    }),
+
+    new WorkboxPlugin.GenerateSW({
+      clientClaim: true,
+      skipWaiting: true
     }),
 
     new CopyWebpackPlugin([{ from: 'public' }]),
