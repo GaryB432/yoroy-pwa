@@ -1,4 +1,3 @@
-
 const preCached = [
   '/',
   'images/icons/icon-128x128.png',
@@ -25,6 +24,8 @@ workbox.core.setCacheNameDetails({
 workbox.skipWaiting();
 workbox.clientsClaim();
 
-self.__precacheManifest = preCached.concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+// workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(
+  self.__precacheManifest.concat(preCached),
+  {}
+);
