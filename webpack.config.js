@@ -68,10 +68,10 @@ module.exports = {
       chunkFilename: 'css/[id].[hash].css',
     }),
 
-    new InjectManifest({
-      swSrc: path.join('src', 'sw.js'),
-      swDest: 'service-worker.js',
-    }),
+    // new InjectManifest({
+    //   swSrc: path.join('src', 'sw.js'),
+    //   swDest: 'service-worker.js',
+    // }),
     
     // new GenerateSW({
       // skipWaiting: true,
