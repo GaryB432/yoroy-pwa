@@ -1,7 +1,6 @@
 export class Worder {
   private consonants = 'bcdfghjklmnpqrstvwxyz';
   private vowels = 'aeiou';
-  constructor(public greeting: string) {}
   public create(): string {
     const letters = [
       this.getConsonant(),
