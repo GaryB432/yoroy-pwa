@@ -48,7 +48,8 @@ body {
       }
     }
     &.selected {
-      border: thin solid orange;
+      // border: 4px solid white;
+      transform: scale(1.2);
     }
   }
 
