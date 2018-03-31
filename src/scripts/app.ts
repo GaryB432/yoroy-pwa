@@ -29,6 +29,7 @@ function showWord() {
 }
 
 function dismiss(score: number) {
+  // tslint:disable-next-line:no-console
   console.log(words[ndx], score);
   getNewWord();
   showWord();
