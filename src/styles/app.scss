@@ -19,7 +19,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.a {
+.word-box {
   padding: 2rem 0;
   font-size: 2rem;
   background: orange;
@@ -27,33 +27,26 @@ body {
 }
 
 .thumbs {
-  // padding: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  svg {
-    height: 2rem;
+  img {
+    height: 1.8rem;
+    &.disabled {
+      opacity: 0.2;
+    }
   }
-  // .down {
-  //   transform: rotate(180deg);
-  // }
-  // .back,
-  // .forth {
-  //   path {
-  //     fill: pink;
-  //   }
-  //   svg {
-  //     height: 1rem;
-  //   }
-  // }
-  // .back {
-  //   transform: rotate(180deg);
-  // }
-  // .forth {
-  //   fill: blue;
-  // }
+  .down {
+    transform: rotate(180deg);
+  }
+  .back {
+    transform: rotate(180deg);
+  }
 }
 .flaticon {
   padding: 0.2rem;
-  font-size: 0.3rem;
+  font-size: 0.25rem;
+  a {
+    color: inherit;
+  }
 }

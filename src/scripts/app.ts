@@ -1,48 +1,66 @@
 /* tslint:disable:no-var-requires */
 import { Worder } from './worder';
 
-const thumbsUp = require('../svg/thumbs-up.svg');
-const chevron = require('../svg/right-chevron.svg');
+const worder: Worder = new Worder();
 
-const worder: Worder = new Worder('bugler');
+const wordElement = document.getElementById('bugler');
 
-const el = document.getElementById('bugler');
+const disabled = 'disabled';
 
-function spinWord() {
-  el!.innerHTML = worder.create();
+const words: string[] = [];
+let ndx: number = -1;
+
+function enable(control: Element, enabled = true) {
+  if (enabled) {
+    control.classList.remove(disabled);
+  } else {
+    control.classList.add(disabled);
+  }
+}
+
+function getNewWord() {
+  ndx = words.push(worder.create()) - 1;
+}
+
+function showWord() {
+  wordElement!.innerText = words[ndx];
+  enable(bback, ndx > 0);
+  enable(bforth, ndx < words.length - 1);
+}
+
+function dismiss(score: number) {
+  console.log(words[ndx], score);
+  getNewWord();
+  showWord();
 }
 
 const bback = document.querySelector('.back')!;
 const backSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-backSvg.innerHTML = chevron;
 bback.appendChild(backSvg);
 bback.addEventListener('click', () => {
-  spinWord();
+  if (ndx > 0) {
+    ndx--;
+    showWord();
+  }
 });
 
 const bup = document.querySelector('.up')!;
-const upSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-upSvg.innerHTML = 'thumbsUp';
-bup.appendChild(upSvg);
 bup.addEventListener('click', () => {
-  spinWord();
+  dismiss(10);
 });
 
-// const bdown = document.querySelector('.down')!;
-// const downSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-// downSvg.innerHTML = thumbsUp;
-// bdown.appendChild(downSvg);
-// bdown.addEventListener('click', () => {
-//   spinWord();
-// });
+const bdown = document.querySelector('.down')!;
+bdown.addEventListener('click', () => {
+  dismiss(0);
+});
 
 const bforth = document.querySelector('.forth')!;
-const forthSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-forthSvg.innerHTML = chevron;
-bforth.appendChild(forthSvg);
 bforth.addEventListener('click', () => {
-  spinWord();
+  if (ndx < words.length - 1) {
+    ndx++;
+    showWord();
+  }
 });
 
-
-spinWord();
+getNewWord();
+showWord();
