@@ -28,7 +28,7 @@ app.use(nocache());
 app.use(
   express.static(__dirname + '/dist', {
     index: ['index.html'],
-    maxAge: oneDay,
+    // maxAge: oneDay,
   })
 );
 
