@@ -1,7 +1,8 @@
 {
-  "name": "bugler",
-  "version": "0.0.0",
-  "description": "bugler",
+  "name": "yoroy-pwa",
+  "version": "1.0.0",
+  "description": "word spinner game PWA",
+  "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-serve ./webpack.config.js",
@@ -12,11 +13,25 @@
     "test": "jest",
     "test-watch": "jest --watch"
   },
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.3",
-    "tslib": "^1.9.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garyb432/yoroy-pwa.git"
   },
+  "keywords": [
+    "word",
+    "game",
+    "pwa",
+    "workbox",
+    "service",
+    "worker",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garyb432/yoroy-pwa/issues"
+  },
+  "homepage": "https://github.com/garyb432/yoroy-pwa#readme",
   "devDependencies": {
     "@types/jest": "^22.2.2",
     "@types/node": "^9.6.1",
@@ -42,8 +57,12 @@
     "typescript": "^2.8.1",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",
-    "webpack-serve": "^0.3.0",
+    "webpack-serve": "^0.3.1",
     "workbox-webpack-plugin": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "tslib": "^1.9.0"
   },
   "engines": {
     "node": ">=6.0.0"

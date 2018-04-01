@@ -13,13 +13,13 @@ const preCached = [
   '/images/right-chevron.svg',
   '/images/thumbs-up.svg',
   {
-    revision: '2303v',
+    revision: '0026v',
     url: '/manifest.json',
   },
 ];
 
 workbox.core.setCacheNameDetails({
-  prefix: 'bugler',
+  prefix: 'yoroy',
   suffix: 'v1',
   precache: 'install-time',
   runtime: 'run-time',
