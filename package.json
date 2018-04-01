@@ -14,8 +14,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "finalhandler": "^1.1.1",
-    "serve-static": "^1.13.2",
+    "express": "^4.16.3",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
