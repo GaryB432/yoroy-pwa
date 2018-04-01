@@ -75,15 +75,15 @@ module.exports = {
       swSrc: path.join('src', 'sw.js'),
       swDest: 'service-worker.js',
     }),
-    
+
     // new GenerateSW({
-      // skipWaiting: true,
-      // clientsClaim: true,
+    // skipWaiting: true,
+    // clientsClaim: true,
     //   globPatterns: ['**/*.svg'],
     //   // runtimeCaching: [{}]
     // }),
 
-    new CopyWebpackPlugin([{ from: 'public' }]),
+    new CopyWebpackPlugin([{ from: 'public', ignore: ['Thumbs.db'] }]),
   ],
 
   resolve: {

@@ -13,7 +13,7 @@ const preCached = [
   '/images/right-chevron.svg',
   '/images/thumbs-up.svg',
   {
-    revision: '0026v',
+    revision: '1014v',
     url: '/manifest.json',
   },
 ];

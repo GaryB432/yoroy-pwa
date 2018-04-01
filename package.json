@@ -1,8 +1,7 @@
-﻿{
+{
   "name": "yoroy-pwa",
   "version": "1.0.0",
   "description": "word spinner game PWA",
-  "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-serve ./webpack.config.js",
@@ -26,7 +25,6 @@
     "worker",
     "typescript"
   ],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/garyb432/yoroy-pwa/issues"
