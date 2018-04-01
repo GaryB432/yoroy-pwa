@@ -1,4 +1,4 @@
-const precacheController = new workbox.precaching.PrecacheController();
+// const precacheController = new workbox.precaching.PrecacheController();
 
 function addIndexRevision(urls, defRev) {
   const rando = (Math.random() * 1000000).toPrecision(6);
