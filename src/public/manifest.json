@@ -1,11 +1,11 @@
 {
-  "name": "cifom",
-  "short_name": "cifom",
+  "name": "Yoroy Word Spin",
+  "short_name": "yoroy",
   "theme_color": "#ffa500",
   "background_color": "#2196f3",
   "display": "standalone",
   "Scope": "/",
-  "start_url": ".",
+  "start_url": "/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
